@@ -1,5 +1,8 @@
 import { Creature } from './Creature';
+import { creatures } from './creatures';
+import { randomInt } from './util';
 
-export function randomCreature(): Creature {
-  return { name: 'frank', challengeRating: 1, terrains: ['land', 'water'], type: 'beast' };
+export function randomBeast(): Creature {
+  const beasts = creatures.beasts;
+  return beasts[randomInt(0, beasts.length)];
 }

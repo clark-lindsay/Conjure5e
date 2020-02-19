@@ -4,6 +4,7 @@
     "target": "ES6",
     "esModuleInterop": true,
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "strict": true
   },
   "compileOnSave": true
