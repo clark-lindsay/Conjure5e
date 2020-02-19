@@ -8,4 +8,10 @@ describe('the randomBeast function', () => {
     expect(Array.isArray(creature.terrains)).toBeTruthy();
     expect(typeof creature.type).toEqual('string');
   });
+
+  it('will return only beasts whose challenge rating matches the rating given', () => {
+    for (let i = 0; i < 3; ++i) {
+      expect(randomBeast(0).challengeRating).toEqual(0);
+    }
+  });
 });
