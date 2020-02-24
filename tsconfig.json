@@ -4,6 +4,7 @@
     "target": "ES6",
     "esModuleInterop": true,
     "noUnusedLocals": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true
   },
