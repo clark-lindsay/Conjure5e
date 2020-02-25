@@ -1,4 +1,4 @@
-import { randomCreatures } from './randomCreature';
+import { randomCreatures } from './randomCreatures';
 
 describe('the randomCreature function', () => {
   it('will return an object that matches the Creature interface when called with an empty arguments object', () => {
