@@ -1,5 +1,8 @@
 BIN=./node_modules/.bin
 
+run: 
+	node -r ts-node/register index.ts
+
 test: jest
 
 jest:

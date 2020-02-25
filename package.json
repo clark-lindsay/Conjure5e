@@ -1,16 +1,20 @@
 {
   "name": "conjure5e",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/clark-lindsay/Conjure5e.git",
   "author": "clark-lindsay <clarklindsay96@gmail.com>",
   "license": "MIT",
   "private": false,
+  "main": "index.ts",
+  "bin": {
+    "conjure5e": "./index.ts"
+  },
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
-    "ts-jest": "^25.2.0"
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.8.3",
