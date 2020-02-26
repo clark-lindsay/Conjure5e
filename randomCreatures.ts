@@ -12,9 +12,7 @@ export function randomCreatures({
 }: randomCreaturesArgs): Creature[] {
   let creatures = Object.values(allCreatures).reduce((accumulator, subList) => accumulator.concat(subList), []);
   creatures = filterByChallengeRating(challengeRatingMin, challengeRatingMax, creatures);
-  if (types) {
-    creatures = creatures.filter(creature => types.includes(creature.type));
-  }
+  creatures = filterByType(types, creatures);
   if (terrains) {
     let filteredCreatures: Creature[] = [];
     for (const terrain of terrains) {
@@ -48,6 +46,13 @@ function filterByChallengeRating(
   return result;
 }
 
+function filterByType(types: string[] | undefined, creatures: Creature[]): Creature[] {
+  let result = creatures;
+  if (types) {
+    result = result.filter(creature => types.includes(creature.type));
+  }
+  return result;
+}
 interface randomCreaturesArgs {
   challengeRatingMin?: number;
   challengeRatingMax?: number;
