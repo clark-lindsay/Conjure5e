@@ -1,12 +1,12 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
-import { randomCreatures } from './randomCreatures';
+import { conjureAnimals } from './conjurationSpells';
 
 export async function cli(args: any) {
   let options = parseArgumentsIntoOptions(args);
   options = await promptForSpellChoice(options);
   options = await promptForSpellParameters(options);
-  const creatures = randomCreatures({ challengeRatingMin: options.challengeRating, count: 5 });
+  const creatures = conjureAnimals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
   console.log(creatures);
 }
 
@@ -64,11 +64,19 @@ async function promptForSpellParameters(options: any): Promise<Options> {
     choices: [0, 0.125, 0.25, 0.5, 1, 2], //TODO: choices need to be spell dependent
     default: 1
   });
-
+  questions.push({
+    type: 'checkbox',
+    name: 'terrains',
+    message:
+      'Please choose what terrains are present where the creatures are to be summoned ([Space] to make a selection):',
+    choices: ['Land', 'Water', 'Air'],
+    default: ['Land']
+  });
   const answers = await inquirer.prompt(questions);
   return {
     ...options,
-    challengeRating: answers.challengeRating
+    challengeRating: answers.challengeRating,
+    terrains: answers.terrains
   };
 }
 
@@ -76,4 +84,5 @@ interface Options {
   any?: boolean;
   spell?: string;
   challengeRating?: number;
+  terrains?: string[];
 }
