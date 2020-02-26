@@ -2,6 +2,9 @@ import { randomCreatures } from './randomCreatures';
 import { Creature } from './Creature';
 
 export function conjureAnimals({ challengeRating, terrains }: ConjurationArguments): Creature[] {
+  if (challengeRating > 2 || challengeRating < 0) {
+    throw new Error('The challengeRating passed to conjureAnimals must be in the range [0, 2]');
+  }
   let count = 1;
   if (challengeRating <= 0.25) {
     count = 8;

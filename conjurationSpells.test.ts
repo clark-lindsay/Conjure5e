@@ -28,4 +28,9 @@ describe('the conjureAnimals function', () => {
     expect(creaturesWithCROne.length).toEqual(2);
     expect(creaturesWithCRTwo.length).toEqual(1);
   });
+
+  it('will throw an error if it is given a challengeRating above 2 or below 0', () => {
+    expect(() => conjureAnimals({ challengeRating: 3 })).toThrow();
+    expect(() => conjureAnimals({ challengeRating: -1 })).toThrow();
+  });
 });
