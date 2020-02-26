@@ -14,6 +14,7 @@ export function randomCreatures({
   creatures = filterByChallengeRating(challengeRatingMin, challengeRatingMax, creatures);
   creatures = filterByType(types, creatures);
   creatures = filterByTerrain(terrains, creatures);
+
   if (isNullOrUndefined(count)) {
     return [creatures[randomInt(0, creatures.length)]];
   }
