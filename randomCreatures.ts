@@ -10,7 +10,7 @@ export function randomCreatures({
   count,
   terrains
 }: randomCreaturesArgs): Creature[] {
-  let creatures = Object.values(allCreatures).reduce((accumulator, subList) => accumulator.concat(subList), []);
+  let creatures = Object.values(allCreatures).reduce((accumulator, subList) => [...accumulator, ...subList], []);
   creatures = filterByChallengeRating(challengeRatingMin, challengeRatingMax, creatures);
   creatures = filterByType(types, creatures);
   if (terrains) {
