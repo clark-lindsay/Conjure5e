@@ -11,12 +11,7 @@ export function randomCreatures({
   terrains
 }: randomCreaturesArgs): Creature[] {
   let creatures = Object.values(allCreatures).reduce((accumulator, subList) => accumulator.concat(subList), []);
-  if (!isNullOrUndefined(challengeRatingMin)) {
-    creatures = creatures.filter(creature => creature.challengeRating >= challengeRatingMin);
-  }
-  if (!isNullOrUndefined(challengeRatingMax)) {
-    creatures = creatures.filter(creature => creature.challengeRating <= challengeRatingMax);
-  }
+  creatures = filterByChallengeRating(challengeRatingMin, challengeRatingMax, creatures);
   if (types) {
     creatures = creatures.filter(creature => types.includes(creature.type));
   }
@@ -34,6 +29,21 @@ export function randomCreatures({
   let result = [];
   for (const _ of range(0, count)) {
     result.push(creatures[randomInt(0, creatures.length)]);
+  }
+  return result;
+}
+
+function filterByChallengeRating(
+  challengeRatingMin: number | undefined,
+  challengeRatingMax: number | undefined,
+  creatures: Creature[]
+): Creature[] {
+  let result: Creature[] = creatures;
+  if (!isNullOrUndefined(challengeRatingMin)) {
+    result = result.filter(creature => creature.challengeRating >= challengeRatingMin);
+  }
+  if (!isNullOrUndefined(challengeRatingMax)) {
+    result = result.filter(creature => creature.challengeRating <= challengeRatingMax);
   }
   return result;
 }
