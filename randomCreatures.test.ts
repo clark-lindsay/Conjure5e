@@ -31,8 +31,31 @@ describe('the randomCreature function', () => {
   });
 
   it('will return only beasts when the "types" argument only includes that class of creature', () => {
-    for (let i = 0; i < 10; ++i) {
-      expect(randomCreatures({ types: ['Beast'] })[0].type).toEqual('Beast');
+    const creaturesWithTypeBeast = randomCreatures({ types: ['Beast'], count: 10 });
+    for (const creature of creaturesWithTypeBeast) {
+      expect(creature.type).toEqual('Beast');
+    }
+  });
+
+  it('will only return creatures that have at least one of the terrain options specified', () => {
+    const creaturesWithTerrainWater = randomCreatures({ terrains: ['Water'], count: 10 });
+    for (const creature of creaturesWithTerrainWater) {
+      expect(creature.terrains.includes('Water')).toBeTruthy();
+    }
+
+    const creaturesWithTerrainAir = randomCreatures({ terrains: ['Air'], count: 10 });
+    for (const creature of creaturesWithTerrainAir) {
+      expect(creature.terrains.includes('Air')).toBeTruthy();
+    }
+
+    const creaturesWithTerrainLand = randomCreatures({ terrains: ['Land'], count: 10 });
+    for (const creature of creaturesWithTerrainLand) {
+      expect(creature.terrains.includes('Land')).toBeTruthy();
+    }
+
+    const creaturesWithTerrainLandOrWater = randomCreatures({ terrains: ['Land', 'Water'], count: 10 });
+    for (const creature of creaturesWithTerrainLandOrWater) {
+      expect(creature.terrains.includes('Land') || creature.terrains.includes('Water')).toBeTruthy();
     }
   });
 });

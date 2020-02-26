@@ -1,3 +1,4 @@
+// TODO: add a global parameter somewhere in a configuration file so that I can specify what source books are allowed
 export const creatures = {
   beasts: [
     {
