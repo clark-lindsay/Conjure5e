@@ -638,5 +638,163 @@ export const creatures = {
       terrains: ['Land'],
       type: 'Beast'
     }
+  ],
+  fey: [
+    {
+      name: 'Boggle',
+      challengeRating: 0.125,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Valenar Hawk',
+      challengeRating: 0.125,
+      terrains: ['Land', 'Air'],
+      type: 'Fey'
+    },
+    {
+      name: 'Blink Dog',
+      challengeRating: 0.25,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Pixie',
+      challengeRating: 0.25,
+      terrains: ['Land', 'Air'],
+      type: 'Fey'
+    },
+    {
+      name: 'Sprite',
+      challengeRating: 0.25,
+      terrains: ['Land', 'Air'],
+      type: 'Fey'
+    },
+    {
+      name: 'Darkling',
+      challengeRating: 0.5,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Satyr',
+      challengeRating: 0.5,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Valenar Hound',
+      challengeRating: 0.5,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Valenar Steed',
+      challengeRating: 0.5,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Dryad',
+      challengeRating: 1,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Quickling',
+      challengeRating: 1,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Darkling Elder',
+      challengeRating: 2,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Meanlock',
+      challengeRating: 2,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Sea Hag',
+      challengeRating: 2,
+      terrains: ['Land', 'Water'],
+      type: 'Fey'
+    },
+    {
+      name: 'Green Hag',
+      challengeRating: 3,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Redcap',
+      challengeRating: 3,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Siren',
+      challengeRating: 3,
+      terrains: ['Land', 'Water'],
+      type: 'Fey'
+    },
+    {
+      name: 'Yeth Hound',
+      challengeRating: 4,
+      terrains: ['Land', 'Air'],
+      type: 'Fey'
+    },
+    {
+      name: 'Annis Hag',
+      challengeRating: 6,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Dusk Hag',
+      challengeRating: 6,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Bheur Hag',
+      challengeRating: 7,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Korred',
+      challengeRating: 7,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Autumn Eladrin',
+      challengeRating: 10,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Spring Eladrin',
+      challengeRating: 10,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Summer Eladrin',
+      challengeRating: 10,
+      terrains: ['Land'],
+      type: 'Fey'
+    },
+    {
+      name: 'Winter Eladrin',
+      challengeRating: 10,
+      terrains: ['Land'],
+      type: 'Fey'
+    }
   ]
 };
