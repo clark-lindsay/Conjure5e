@@ -446,9 +446,40 @@ export const creatures = {
       type: 'Beast'
     },
     {
+      name: 'Allosaurus',
+      challengeRating: 2.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Aurochs',
+      challengeRating: 2.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+
+    {
+      name: 'Cave Bear',
+      challengeRating: 2.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
       name: 'Giant Boar',
       challengeRating: 2.0,
       terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Ice Spider Queen',
+      challengeRating: 2.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant White Moray Eel',
+      challengeRating: 2.0,
+      terrains: ['Water'],
       type: 'Beast'
     },
     {
@@ -497,6 +528,114 @@ export const creatures = {
       name: 'Swarm of Poisonous Snakes',
       challengeRating: 2.0,
       terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Ankylosaurus',
+      challengeRating: 3.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Scorpion',
+      challengeRating: 3.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Snapping Turtle',
+      challengeRating: 3.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Killer Whale',
+      challengeRating: 3.0,
+      terrains: ['Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Elephant',
+      challengeRating: 3.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Coral Snake',
+      challengeRating: 4.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Subterranean Lizard',
+      challengeRating: 4.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Stegosaurus',
+      challengeRating: 4.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Brontosaurus',
+      challengeRating: 5.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Crocodile',
+      challengeRating: 5.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Shark',
+      challengeRating: 5.0,
+      terrains: ['Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Hulking Crab',
+      challengeRating: 5.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Swarm of Cranium Rats',
+      challengeRating: 5.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Triceratops',
+      challengeRating: 5.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Mammoth',
+      challengeRating: 6.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Giant Ape',
+      challengeRating: 7.0,
+      terrains: ['Land'],
+      type: 'Beast'
+    },
+    {
+      name: 'Huge Giant Crab',
+      challengeRating: 8.0,
+      terrains: ['Land', 'Water'],
+      type: 'Beast'
+    },
+    {
+      name: 'Tyrannosaurus Rex',
+      challengeRating: 8.0,
+      terrains: ['Land'],
       type: 'Beast'
     }
   ]
