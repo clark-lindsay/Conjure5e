@@ -1,4 +1,4 @@
-import { conjureAnimals, conjureWoodlandBeings } from './conjurationSpells';
+import { conjureAnimals, conjureMinorElementals, conjureWoodlandBeings } from './conjurationSpells';
 
 describe('the conjureAnimals function', () => {
   it('returns only beasts, regardless of the arguments given', () => {
@@ -74,5 +74,41 @@ describe('the conjureWoodlandBeings function', () => {
   it('will throw an error if it is given a challengeRating above 2 or below 0', () => {
     expect(() => conjureWoodlandBeings({ challengeRating: 3 })).toThrow();
     expect(() => conjureWoodlandBeings({ challengeRating: -1 })).toThrow();
+  });
+});
+
+describe('the conjureMinorElementals function', () => {
+  it('returns only elementals, regardless of the arguments given', () => {
+    const creatures = conjureMinorElementals({ challengeRating: 0.5 });
+    const creatures2 = conjureMinorElementals({ challengeRating: 0.25 });
+
+    for (const creature of creatures) {
+      expect(creature.type).toEqual('Elemental');
+    }
+
+    for (const creature of creatures2) {
+      expect(creature.type).toEqual('Elemental');
+    }
+  });
+
+  it('returns the right number of creatures, or zero creatures, for each possible challenge rating', () => {
+    const creaturesWithCRZero = conjureMinorElementals({ challengeRating: 0 });
+    const creaturesWithCROneEighth = conjureMinorElementals({ challengeRating: 0.125 });
+    const creaturesWithCROneQuarter = conjureMinorElementals({ challengeRating: 0.25 });
+    const creaturesWithCROneHalf = conjureMinorElementals({ challengeRating: 0.5 });
+    const creaturesWithCROne = conjureMinorElementals({ challengeRating: 1 });
+    const creaturesWithCRTwo = conjureMinorElementals({ challengeRating: 2 });
+
+    expect(creaturesWithCRZero.length === 8 || creaturesWithCRZero.length === 0).toBeTruthy();
+    expect(creaturesWithCROneEighth.length === 8 || creaturesWithCROneEighth.length === 0).toBeTruthy();
+    expect(creaturesWithCROneQuarter.length === 8 || creaturesWithCROneQuarter.length === 0).toBeTruthy();
+    expect(creaturesWithCROneHalf.length === 4 || creaturesWithCROneHalf.length === 0).toBeTruthy();
+    expect(creaturesWithCROne.length === 2 || creaturesWithCROne.length === 0).toBeTruthy();
+    expect(creaturesWithCRTwo.length === 1 || creaturesWithCRTwo.length === 0).toBeTruthy();
+  });
+
+  it('will throw an error if it is given a challengeRating above 2 or below 0', () => {
+    expect(() => conjureMinorElementals({ challengeRating: 3 })).toThrow();
+    expect(() => conjureMinorElementals({ challengeRating: -1 })).toThrow();
   });
 });
