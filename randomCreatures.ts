@@ -15,6 +15,9 @@ export function randomCreatures({
   creatures = filterByType(types, creatures);
   creatures = filterByTerrain(terrains, creatures);
 
+  if (!creatures.length) {
+    return [];
+  }
   if (isNullOrUndefined(count)) {
     return [creatures[randomInt(0, creatures.length)]];
   }
