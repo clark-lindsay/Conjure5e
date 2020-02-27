@@ -1,6 +1,6 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
-import { conjureAnimals, conjureWoodlandBeings } from './conjurationSpells';
+import { conjureAnimals, conjureWoodlandBeings, conjureMinorElementals } from './conjurationSpells';
 
 export async function cli(args: any) {
   let options = parseArgumentsIntoOptions(args);
@@ -10,6 +10,8 @@ export async function cli(args: any) {
   let result = [];
   if (options.spell === 'Conjure Animals') {
     result = conjureAnimals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
+  } else if (options.spell === 'Conjure Minor Elementals') {
+    result = conjureMinorElementals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
   } else {
     result = conjureWoodlandBeings({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
   }
@@ -45,7 +47,7 @@ async function promptForSpellChoice(options: Options): Promise<Options> {
       type: 'list',
       name: 'spell',
       message: 'Please choose which spell you would like to cast.',
-      choices: ['Conjure Animals', 'Conjure Woodland Beings'],
+      choices: ['Conjure Animals', 'Conjure Woodland Beings', 'Conjure Minor Elementals'],
       default: defaultSpell
     });
   }
@@ -67,7 +69,7 @@ async function promptForSpellParameters(options: any): Promise<Options> {
     type: 'list',
     name: 'challengeRating',
     message: 'Please choose what challenge rating you would like the summoned creatures to be:',
-    choices: [0, 0.125, 0.25, 0.5, 1, 2], //TODO: choices need to be spell dependent
+    choices: [0, 0.125, 0.25, 0.5, 1, 2],
     default: 1
   });
   questions.push({
