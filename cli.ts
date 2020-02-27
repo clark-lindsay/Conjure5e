@@ -1,20 +1,26 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
-import { conjureAnimals } from './conjurationSpells';
+import { conjureAnimals, conjureWoodlandBeings } from './conjurationSpells';
 
 export async function cli(args: any) {
   let options = parseArgumentsIntoOptions(args);
   options = await promptForSpellChoice(options);
   options = await promptForSpellParameters(options);
-  const creatures = conjureAnimals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
-  console.log(creatures);
+
+  let result = [];
+  if (options.spell === 'Conjure Animals') {
+    result = conjureAnimals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
+  } else {
+    result = conjureWoodlandBeings({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
+  }
+  console.log(result);
 }
 
 function parseArgumentsIntoOptions(rawArgs: string[]): Options {
   const args = arg(
     {
       '--any': Boolean,
-      '-a': '--any'
+      '-A': '--any'
     },
     {
       argv: rawArgs.slice(2)
