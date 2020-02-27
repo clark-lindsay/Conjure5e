@@ -796,5 +796,205 @@ export const creatures = {
       terrains: ['Land'],
       type: 'Fey'
     }
+  ],
+  elementals: [
+    {
+      name: 'Chwinga',
+      challengeRating: 0,
+      terrains: ['Land', 'Air', 'Water'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Geonid',
+      challengeRating: 0.25,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Mud Mephit',
+      challengeRating: 0.25,
+      terrains: ['Land', 'Water', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Smoke Mephit',
+      challengeRating: 0.25,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Steam Mephit',
+      challengeRating: 0.25,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Dust Mephit',
+      challengeRating: 0.5,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Ice Mephit',
+      challengeRating: 0.5,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Magma Mephit',
+      challengeRating: 0.5,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Magmin',
+      challengeRating: 0.5,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Fire Snake',
+      challengeRating: 1,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Azer',
+      challengeRating: 2,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Four-Armed Gargoyle',
+      challengeRating: 2,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Gargoyle',
+      challengeRating: 2,
+      terrains: ['Land', 'Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Flail Snail',
+      challengeRating: 3,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Water Weird',
+      challengeRating: 3,
+      terrains: ['Water'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Air Elemental',
+      challengeRating: 5,
+      terrains: ['Air'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Earth Elemental',
+      challengeRating: 5,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Fire Elemental',
+      challengeRating: 5,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Water Elemental',
+      challengeRating: 5,
+      terrains: ['Land', 'Water'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Salamander',
+      challengeRating: 5,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Xorn',
+      challengeRating: 5,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Galeb Duhr',
+      challengeRating: 6,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Invisible Stalker',
+      challengeRating: 6,
+      terrains: ['Air', 'Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Frost Salamander',
+      challengeRating: 6,
+      terrains: ['Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Giant Four-Armed Gargoyle',
+      challengeRating: 10,
+      terrains: ['Air', 'Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Dao',
+      challengeRating: 11,
+      terrains: ['Air', 'Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Djinni',
+      challengeRating: 11,
+      terrains: ['Air', 'Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Efreeti',
+      challengeRating: 11,
+      terrains: ['Air', 'Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Marid',
+      challengeRating: 11,
+      terrains: ['Air', 'Land', 'Water'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Phoenix',
+      challengeRating: 16,
+      terrains: ['Air', 'Land'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Leviathan',
+      challengeRating: 20,
+      terrains: ['Land', 'Water'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Zaratan',
+      challengeRating: 22,
+      terrains: ['Land', 'Water'],
+      type: 'Elemental'
+    },
+    {
+      name: 'Elder Tempest',
+      challengeRating: 23,
+      terrains: ['Air'],
+      type: 'Elemental'
+    }
   ]
 };
