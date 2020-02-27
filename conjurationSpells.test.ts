@@ -13,7 +13,8 @@ describe('the conjureAnimals function', () => {
       expect(creature.type).toEqual('Beast');
     }
   });
-  it('returns the right number of creatures for each possible challenge rating', () => {
+
+  it('returns the right number of creatures, or zero creatures, for each possible challenge rating', () => {
     const creaturesWithCRZero = conjureAnimals({ challengeRating: 0 });
     const creaturesWithCROneEighth = conjureAnimals({ challengeRating: 0.125 });
     const creaturesWithCROneQuarter = conjureAnimals({ challengeRating: 0.25 });
