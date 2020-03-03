@@ -1,4 +1,4 @@
-import { randomInt, range } from './util';
+import { randomInt, range } from '../util';
 
 describe('the randomInt function', () => {
   it('returns a number between the min and the max', () => {

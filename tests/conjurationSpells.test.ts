@@ -1,4 +1,4 @@
-import { conjureAnimals, conjureMinorElementals, conjureWoodlandBeings } from './conjurationSpells';
+import { conjureAnimals, conjureMinorElementals, conjureWoodlandBeings } from '../conjurationSpells';
 
 describe('the conjureAnimals function', () => {
   it('returns only beasts, regardless of the arguments given', () => {
