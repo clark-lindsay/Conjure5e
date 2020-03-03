@@ -1,7 +1,7 @@
 BIN=./node_modules/.bin
 
 run: 
-	node -r ts-node/register index.ts
+	node -r ts-node/register src/index.ts
 
 test: jest
 

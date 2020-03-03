@@ -83,7 +83,7 @@ async function promptForSpellParameters(options: any): Promise<Options> {
   const answers = await inquirer.prompt(questions);
   return {
     ...options,
-    challengeRating: answers.challengeRating,
+    challengeRating: Number(answers.challengeRating),
     terrains: answers.terrains
   };
 }
