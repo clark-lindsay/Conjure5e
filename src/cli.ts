@@ -1,6 +1,7 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
+import boxen from 'boxen';
 import { conjureAnimals, conjureWoodlandBeings, conjureMinorElementals } from './conjurationSpells';
 import { Creature } from './Creature';
 
@@ -91,6 +92,7 @@ async function promptForSpellParameters(options: any): Promise<Options> {
 }
 
 function prettyPrintCreatures(creatures: Creature[]): void {
+  let result = '';
   for (const creature of creatures) {
     let creatureName = '';
     if (creature.terrains.includes('Air')) {
@@ -100,8 +102,9 @@ function prettyPrintCreatures(creatures: Creature[]): void {
     } else {
       creatureName = chalk.bold(chalk.green(creature.name));
     }
-    console.log(`${creatureName}\n`);
+    result += `${creatureName}\n\n`;
   }
+  console.log(boxen(result, { padding: 1 }));
 }
 
 interface Options {
