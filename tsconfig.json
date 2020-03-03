@@ -5,6 +5,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "noUnusedLocals": true,
+    "strictNullChecks": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true
