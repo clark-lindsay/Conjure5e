@@ -1,6 +1,6 @@
 import { Creature } from './Creature';
 import { creatures as allCreatures } from './creatures';
-import { randomInt, range } from './util';
+import { randomInt, range } from '../util';
 import { isNullOrUndefined } from 'util';
 
 export function randomCreatures({

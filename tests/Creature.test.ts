@@ -1,4 +1,4 @@
-import { Creature } from '../Creature';
+import { Creature } from '../src/Creature';
 
 describe('the Creature interface', () => {
   it('has a name: string, challengeRating: number, terrains: string[], and a type: string prop', () => {
