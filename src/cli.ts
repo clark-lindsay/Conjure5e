@@ -1,6 +1,8 @@
 import arg from 'arg';
 import inquirer from 'inquirer';
+import chalk from 'chalk';
 import { conjureAnimals, conjureWoodlandBeings, conjureMinorElementals } from './conjurationSpells';
+import { Creature } from './Creature';
 
 export async function cli(args: any) {
   let options = parseArgumentsIntoOptions(args);
@@ -15,7 +17,7 @@ export async function cli(args: any) {
   } else {
     result = conjureWoodlandBeings({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
   }
-  console.log(result);
+  prettyPrintCreatures(result);
 }
 
 function parseArgumentsIntoOptions(rawArgs: string[]): Options {
@@ -86,6 +88,20 @@ async function promptForSpellParameters(options: any): Promise<Options> {
     challengeRating: Number(answers.challengeRating),
     terrains: answers.terrains
   };
+}
+
+function prettyPrintCreatures(creatures: Creature[]): void {
+  for (const creature of creatures) {
+    let creatureName = '';
+    if (creature.terrains.includes('Air')) {
+      creatureName = chalk.bold(chalk.magenta(creature.name));
+    } else if (creature.terrains.includes('Water')) {
+      creatureName = chalk.bold(chalk.cyan(creature.name));
+    } else {
+      creatureName = chalk.bold(chalk.green(creature.name));
+    }
+    console.log(`${creatureName}\n`);
+  }
 }
 
 interface Options {
