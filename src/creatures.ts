@@ -15,7 +15,8 @@ export const creatures = {
       name: 'Sea Horse',
       challengeRating: 0,
       terrains: ['Water'],
-      type: 'Beast'
+      type: 'Beast',
+      source: BR
     },
     {
       name: 'Baboon',
