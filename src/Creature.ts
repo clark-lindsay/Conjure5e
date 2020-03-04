@@ -3,4 +3,5 @@ export interface Creature {
   challengeRating: number;
   terrains: string[];
   type: string;
+  source: string;
 }
