@@ -4,19 +4,26 @@ import chalk from 'chalk';
 import boxen from 'boxen';
 import { conjureAnimals, conjureWoodlandBeings, conjureMinorElementals } from './conjurationSpells';
 import { Creature } from './Creature';
+import { sources } from './sources';
 
 export async function cli(args: any) {
   let options = parseArgumentsIntoOptions(args);
   options = await promptForSpellChoice(options);
   options = await promptForSpellParameters(options);
+  options = await promptForSources(options);
 
   let result = [];
+  const spellArguments = {
+    challengeRating: options.challengeRating || 0,
+    terrains: options.terrains,
+    sources: options.sources
+  };
   if (options.spell === 'Conjure Animals') {
-    result = conjureAnimals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
+    result = conjureAnimals(spellArguments);
   } else if (options.spell === 'Conjure Minor Elementals') {
-    result = conjureMinorElementals({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
+    result = conjureMinorElementals(spellArguments);
   } else {
-    result = conjureWoodlandBeings({ challengeRating: options.challengeRating || 0, terrains: options.terrains });
+    result = conjureWoodlandBeings(spellArguments);
   }
   prettyPrintCreatures(result);
 }
@@ -91,6 +98,26 @@ async function promptForSpellParameters(options: any): Promise<Options> {
   };
 }
 
+async function promptForSources(options: any): Promise<Options> {
+  if (options.any) {
+    return { ...options };
+  }
+
+  const questions = [];
+  questions.push({
+    type: 'checkbox',
+    name: 'sources',
+    message: 'Please choose what sources are available and relevant to you:',
+    choices: Object.values(sources),
+    default: Object.values(sources)
+  });
+  const answers = await inquirer.prompt(questions);
+  return {
+    ...options,
+    sources: answers.sources
+  };
+}
+
 function prettyPrintCreatures(creatures: Creature[]): void {
   let result = '';
   for (const creature of creatures) {
@@ -112,4 +139,5 @@ interface Options {
   spell?: string;
   challengeRating?: number;
   terrains?: string[];
+  sources?: string[];
 }
