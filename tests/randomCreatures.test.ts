@@ -17,6 +17,25 @@ describe('the randomCreature function', () => {
     expect(randomCreatures({ count: 10 })).toHaveLength(10);
   });
 
+  it('will, given a set of source books, only return creatures from those source books', () => {
+    const vaildSources = [sources.BR, sources.MM, sources.MtoF];
+
+    const basicRulesCreaturesOnly = randomCreatures({ count: 10, sources: [sources.BR] });
+    for (const creature of basicRulesCreaturesOnly) {
+      expect(creature.source === sources.BR).toBeTruthy();
+    }
+
+    const validSourceCreatures = randomCreatures({ count: 10, sources: vaildSources });
+    for (const creature of validSourceCreatures) {
+      expect(vaildSources.includes(creature.source)).toBeTruthy();
+    }
+
+    const sourceUndefinedCreatures = randomCreatures({ count: 10 });
+    for (const creature of sourceUndefinedCreatures) {
+      expect(creature.source).toBeTruthy();
+    }
+  });
+
   it('will return only creatures whose challenge rating matches the rating range given', () => {
     const creaturesWithCRZero = randomCreatures({ challengeRatingMax: 0, count: 10 });
     for (const creature of creaturesWithCRZero) {
