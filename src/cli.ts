@@ -109,7 +109,7 @@ async function promptForSources(options: any): Promise<Options> {
     name: 'sources',
     message: 'Please choose what sources are available and relevant to you:',
     choices: Object.values(sources),
-    default: Object.values(sources)
+    default: [sources.BR, sources.DMG, sources.PHB, sources.MM]
   });
   const answers = await inquirer.prompt(questions);
   return {
