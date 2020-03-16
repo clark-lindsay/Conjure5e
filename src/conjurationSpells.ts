@@ -1,7 +1,7 @@
 import { randomCreatures } from './randomCreatures';
 import { Creature } from './Creature';
 
-export function conjureAnimals({ challengeRating, terrains }: ConjurationArguments): Creature[] {
+export function conjureAnimals({ challengeRating, terrains, sources }: ConjurationArguments): Creature[] {
   if (challengeRating > 2 || challengeRating < 0) {
     throw new Error('The challengeRating passed to conjureAnimals must be in the range [0, 2]');
   }
@@ -21,11 +21,12 @@ export function conjureAnimals({ challengeRating, terrains }: ConjurationArgumen
     challengeRatingMax: challengeRating,
     terrains,
     types: ['Beast'],
-    count
+    count,
+    sources
   });
 }
 
-export function conjureWoodlandBeings({ challengeRating, terrains }: ConjurationArguments): Creature[] {
+export function conjureWoodlandBeings({ challengeRating, terrains, sources }: ConjurationArguments): Creature[] {
   if (challengeRating > 2 || challengeRating < 0) {
     throw new Error('The challengeRating passed to conjureWoodlandBeings must be in the range [0, 2]');
   }
@@ -45,11 +46,12 @@ export function conjureWoodlandBeings({ challengeRating, terrains }: Conjuration
     challengeRatingMax: challengeRating,
     terrains,
     types: ['Fey'],
-    count
+    count,
+    sources
   });
 }
 
-export function conjureMinorElementals({ challengeRating, terrains }: ConjurationArguments): Creature[] {
+export function conjureMinorElementals({ challengeRating, terrains, sources }: ConjurationArguments): Creature[] {
   if (challengeRating > 2 || challengeRating < 0) {
     throw new Error('The challengeRating passed to conjureMinorElementals must be in the range [0, 2]');
   }
@@ -69,11 +71,13 @@ export function conjureMinorElementals({ challengeRating, terrains }: Conjuratio
     challengeRatingMax: challengeRating,
     terrains,
     types: ['Elemental'],
-    count
+    count,
+    sources
   });
 }
 
 interface ConjurationArguments {
   challengeRating: number;
   terrains?: string[];
+  sources?: string[];
 }
