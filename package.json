@@ -9,6 +9,9 @@
   "bin": {
     "conjure5e": "./index.ts"
   },
+  "scripts": {
+    "cli": "node -r ts-node/register src/index.ts"
+  },
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "jest": "^25.1.0",
