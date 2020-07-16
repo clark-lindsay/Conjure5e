@@ -2301,6 +2301,11 @@ jest-validate@^25.5.0:
     leven "^3.1.0"
     pretty-format "^25.5.0"
 
+jest-vim-reporter@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/jest-vim-reporter/-/jest-vim-reporter-0.0.1.tgz#70e677d285a1f1e2c13b0eccb11197c70832f34d"
+  integrity sha512-yRIzUEHdvaAWnv6zlMnXFsjpLCWsl7h/fSAGcU771T2sorhWKdMF7hjT+pabyJ+CuakYRFa8UNrZB62Wr6Z58w==
+
 jest-watcher@^25.5.0:
   version "25.5.0"
   resolved "https://registry.yarnpkg.com/jest-watcher/-/jest-watcher-25.5.0.tgz#d6110d101df98badebe435003956fd4a465e8456"

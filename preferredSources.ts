@@ -1,0 +1,1 @@
+export const preferredSources = ['Basic Rules','Monster Manual','Dungeon Master's Guide'];

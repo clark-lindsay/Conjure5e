@@ -18,3 +18,4 @@ export const sources = {
   WGtE: "Wayfinder's Guide to Eberron",
   XGtE: "Xanathar's Guide to Everything"
 };
+
