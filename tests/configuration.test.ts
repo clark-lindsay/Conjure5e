@@ -9,8 +9,8 @@ describe('the writeSourcePreferences function', () => {
     };
     writeSourcePreferences([sources.BR, sources.MM, sources.DMG]);
 
-    const rawData = String(readFileSync('preferredSources.json'));
-    const actual = JSON.parse(rawData);
+    const data = String(readFileSync('preferredSources.json'));
+    const actual = JSON.parse(data);
 
     expect(actual).toEqual(expected);
   });
