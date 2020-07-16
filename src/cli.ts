@@ -5,6 +5,7 @@ import boxen from 'boxen';
 import { conjureAnimals, conjureWoodlandBeings, conjureMinorElementals } from './conjurationSpells';
 import { Creature } from './Creature';
 import { sources } from './sources';
+import { preferredSources } from '../preferredSources';
 
 export async function cli(args: any) {
   let options = parseArgumentsIntoOptions(args);
@@ -109,7 +110,7 @@ async function promptForSources(options: any): Promise<Options> {
     name: 'sources',
     message: 'Please choose what sources are available and relevant to you:',
     choices: Object.values(sources),
-    default: [sources.BR, sources.DMG, sources.PHB, sources.MM]
+    default: preferredSources
   });
   const answers = await inquirer.prompt(questions);
   return {
