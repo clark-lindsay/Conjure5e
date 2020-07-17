@@ -104,13 +104,20 @@ async function promptForSources(options: any): Promise<Options> {
     return { ...options };
   }
 
+  let defaultSources;
+  try {
+    defaultSources = JSON.parse(String(readFileSync('preferredSources.json'))).sources;
+  } catch (_) {
+    defaultSources = [sources.BR, sources.MM, sources.DMG];
+  }
+
   const questions = [];
   questions.push({
     type: 'checkbox',
     name: 'sources',
     message: 'Please choose what sources are available and relevant to you:',
     choices: Object.values(sources),
-    default: JSON.parse(String(readFileSync('preferredSources.json'))).sources
+    default: defaultSources
   });
   const answers = await inquirer.prompt(questions);
   return {
