@@ -1,11 +1,16 @@
 # Conjure5e
 
-A project to ease the use of conjuration spells in the 5th edition of Dungeons and Dragons that summon random, parameterized creatures.
+A project to ease the use of conjuration spells in the 5th edition  
+of Dungeons and Dragons that summon random, parameterized creatures.
 
 ## Downloading and Installing
 
+To run the application you wil need to install node.js.  
+The commands in the remainder of the readme are given assuming that you are using npm.  
+If you are not, then I expect you to be able to translate the commands to the package  
+manager of your choosing.
 One can either clone the repo using git, or download the zip archive and unzip.  
-In either case, after downloaded, you can run `npm instsall` or `yarn install` (if you have yarn) at the root  
+In either case, after downloaded, you can run `npm instsall` at the root  
 directory of the project (which is where you will see package.json, index.ts, and this README.md file) to install all of the  
 dependencies for the project.
 
@@ -15,10 +20,10 @@ To enter the configuration menu you must run `npm run configuration` at the comm
 
 ## Running the application
 
-To start the application you must run `npm run start` or `npm run app` at the command line, from the root of the project.
+To start the application you must execute `npm run start`, `npm start`, or `npm run app` at the command line, from the root of the project.
 
 ## Reporting Errors and Possible Improvements
 
-Please submit an issue on https://github.com/clark-lindsay/Conjure5e/issues
+Please submit an issue at https://github.com/clark-lindsay/Conjure5e/issues
 
 Describe your problem or idea for improvement in as much detail as you can, and I will get to it when I am able.
