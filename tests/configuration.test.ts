@@ -3,7 +3,7 @@ import { sources } from '../src/sources';
 import { readFileSync } from 'fs';
 
 describe('the writeSourcePreferences function', () => {
-  it('writes the sources in the form of a ts string array', () => {
+  it('writes the sources in the form of a json file', () => {
     const expected = {
       sources: [sources.BR, sources.MM, sources.DMG]
     };
