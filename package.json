@@ -12,6 +12,7 @@
   "scripts": {
     "start": "node -r ts-node/register src/index.ts",
     "app": "node -r ts-node/register src/index.ts",
+    "recast": "node -r ts-node/register src/recast.ts",
     "configuration": "node -r ts-node/register src/sourcePicker.ts"
   },
   "devDependencies": {
