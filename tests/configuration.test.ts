@@ -11,7 +11,7 @@ describe('the writeSourcePreferences function', () => {
     }
   });
 
-  it('writes the sources in the form of a json file', () => {
+  it('writes the sources in the form of a json file, which can be parsed', () => {
     const expected = {
       sources: [sources.BR, sources.MM, sources.DMG]
     };
