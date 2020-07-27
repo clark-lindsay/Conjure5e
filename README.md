@@ -21,6 +21,8 @@ To enter the configuration menu you must execute `npm run configuration` at the 
 ## Running the application
 
 To start the application you must execute `npm run start`, `npm start`, or `npm run app` at the command line, from the root of the project.
+<br>
+To run the last spell that you cast, with all of the same parameters, execute: `npm run recast` at the command line, from the root of the project.
 
 ## Reporting Errors and Possible Improvements
 
