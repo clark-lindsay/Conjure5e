@@ -6,19 +6,17 @@ of Dungeons and Dragons that summon random, parameterized creatures.
 ## Downloading and Installing
 
 To run the application you wil need to install node.js.  
-<br>
+<br><br>
 The commands in the remainder of the readme are given assuming that you are using npm.  
-If you are not, then I expect you to be able to translate the commands to the package  
-manager of your choosing.
-<br>
+If you are not, then I expect you to be able to translate the commands to the packagemanager of your choosing.
+<br><br>
 One can either clone the repo using git, or download the zip archive and unzip.  
 In either case, after downloaded, you can run `npm instsall` at the root
-directory of the project (which is where you will see package.json, index.ts, and this README.md file) to install all of the
-dependencies for the project.
+directory of the project (which is where you will see package.json, index.ts, and this README.md file) to install all of the dependencies for the project.
 
 ## Configuration
 
-To enter the configuration menu you must run `npm run configuration` at the command line, from the root of the project.
+To enter the configuration menu you must execute `npm run configuration` at the command line, from the root of the project.
 
 ## Running the application
 
