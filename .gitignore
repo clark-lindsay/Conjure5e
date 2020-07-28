@@ -106,6 +106,8 @@ dist
 # VSCode
 .vscode
 
+# MacOS
+.DS_Store
 # project specific files
 preferredSources.json
 lastArguments.json
