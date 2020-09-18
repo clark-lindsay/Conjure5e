@@ -7,11 +7,11 @@
   "private": false,
   "main": "index.ts",
   "bin": {
-    "conjure5e": "./index.ts"
+    "conjure5e": "./interactive.ts"
   },
   "scripts": {
-    "start": "node -r ts-node/register src/index.ts",
-    "app": "node -r ts-node/register src/index.ts",
+    "start": "node -r ts-node/register src/interactive.ts",
+    "app": "node -r ts-node/register src/interactive.ts",
     "recast": "node -r ts-node/register src/recast.ts",
     "configuration": "node -r ts-node/register src/sourcePicker.ts"
   },
