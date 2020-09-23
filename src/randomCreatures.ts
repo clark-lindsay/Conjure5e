@@ -1,7 +1,7 @@
-import { Creature } from './Creature';
-import { creatures as allCreatures } from './creatures';
-import { randomInt, range } from '../util';
-import { isNullOrUndefined } from 'util';
+import { Creature } from "./Creature";
+import { creatures as allCreatures } from "./creatures";
+import { randomInt, range } from "../src/util";
+import { isNullOrUndefined } from "util";
 
 export function randomCreatures({
   challengeRatingMin,
@@ -11,9 +11,16 @@ export function randomCreatures({
   terrains,
   sources
 }: randomCreaturesArgs): Creature[] {
-  let creatures = Object.values(allCreatures).reduce((accumulator, subList) => [...accumulator, ...subList], []);
+  let creatures = Object.values(allCreatures).reduce(
+    (accumulator, subList) => [...accumulator, ...subList],
+    []
+  );
   creatures = filterBySource(sources, creatures);
-  creatures = filterByChallengeRating(challengeRatingMin, challengeRatingMax, creatures);
+  creatures = filterByChallengeRating(
+    challengeRatingMin,
+    challengeRatingMax,
+    creatures
+  );
   creatures = filterByType(types, creatures);
   creatures = filterByTerrain(terrains, creatures);
 
@@ -31,7 +38,10 @@ export function randomCreatures({
   return result;
 }
 
-function filterBySource(sources: string[] | undefined, creatures: Creature[]): Creature[] {
+function filterBySource(
+  sources: string[] | undefined,
+  creatures: Creature[]
+): Creature[] {
   let result = creatures;
   if (sources) {
     result = result.filter(creature => sources?.includes(creature.source));
@@ -46,15 +56,22 @@ function filterByChallengeRating(
 ): Creature[] {
   let result: Creature[] = creatures;
   if (!isNullOrUndefined(challengeRatingMin)) {
-    result = result.filter(creature => creature.challengeRating >= challengeRatingMin);
+    result = result.filter(
+      creature => creature.challengeRating >= challengeRatingMin
+    );
   }
   if (!isNullOrUndefined(challengeRatingMax)) {
-    result = result.filter(creature => creature.challengeRating <= challengeRatingMax);
+    result = result.filter(
+      creature => creature.challengeRating <= challengeRatingMax
+    );
   }
   return result;
 }
 
-function filterByType(types: string[] | undefined, creatures: Creature[]): Creature[] {
+function filterByType(
+  types: string[] | undefined,
+  creatures: Creature[]
+): Creature[] {
   let result = creatures;
   if (types) {
     result = result.filter(creature => types.includes(creature.type));
@@ -62,14 +79,20 @@ function filterByType(types: string[] | undefined, creatures: Creature[]): Creat
   return result;
 }
 
-function filterByTerrain(terrains: string[] | undefined, creatures: Creature[]): Creature[] {
+function filterByTerrain(
+  terrains: string[] | undefined,
+  creatures: Creature[]
+): Creature[] {
   if (!terrains) {
     return creatures;
   }
 
   let result: Creature[] = [];
   for (const terrain of terrains) {
-    result = [...result, ...creatures.filter(creature => creature.terrains.includes(terrain))];
+    result = [
+      ...result,
+      ...creatures.filter(creature => creature.terrains.includes(terrain))
+    ];
   }
   return result;
 }
