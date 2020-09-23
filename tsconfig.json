@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "types": ["node", "jest"],
-    "target": "ES6",
+    "target": "ES5",
     "module": "commonjs",
+		"declaration": true,
+		"outDir": "./dist",
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
