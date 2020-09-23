@@ -8,13 +8,13 @@
   "engines": {
     "node": "14.x"
   },
-	"main": "./dist/src/index.js",
-	"types": "./dist/src/index.d.ts",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "bin": {
     "conjure5e": "./interactive.ts"
   },
   "scripts": {
-		"build": "tsc",
+    "build": "tsc",
     "server": "node -r ts-node/register src/server.ts",
     "dev": "nodemon -x ts-node src/server.ts",
     "start": "node -r ts-node/register src/interactive.ts",
@@ -23,8 +23,11 @@
     "configuration": "node -r ts-node/register src/sourcePicker.ts"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.10.4",
     "@types/express": "^4.17.8",
-    "@types/jest": "^25.1.2",
+    "@types/inquirer": "^7.3.1",
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.2",
     "@types/supertest": "^2.0.10",
     "jest": "^25.1.0",
     "jest-vim-reporter": "^0.0.1",
@@ -32,17 +35,14 @@
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.0",
-    "ts-node": "^8.6.2"
+    "ts-node": "^8.6.2",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
-    "@babel/preset-typescript": "^7.8.3",
-    "@types/inquirer": "^6.5.0",
-    "@types/node": "^13.7.1",
     "arg": "^4.1.3",
     "boxen": "^4.2.0",
     "chalk": "^3.0.0",
     "express": "^4.17.1",
-    "inquirer": "^7.0.4",
-    "typescript": "^3.7.5"
+    "inquirer": "^7.0.4"
   }
 }
