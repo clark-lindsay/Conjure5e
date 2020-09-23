@@ -1,7 +1,6 @@
 import { Creature } from "./Creature";
 import { creatures as allCreatures } from "./creatures";
 import { randomInt, range } from "../src/util";
-import { isNullOrUndefined } from "util";
 
 export function randomCreatures({
   challengeRatingMin,
@@ -27,7 +26,7 @@ export function randomCreatures({
   if (!creatures.length) {
     return [];
   }
-  if (isNullOrUndefined(count)) {
+  if (count === null || count === undefined) {
     return [creatures[randomInt(0, creatures.length)]];
   }
 
@@ -56,11 +55,17 @@ function filterByChallengeRating(
 ): Creature[] {
   let result: Creature[] = creatures;
   if (!isNullOrUndefined(challengeRatingMin)) {
+    if (challengeRatingMin === undefined) {
+      throw new Error(`challengeRatingMin is undefined`);
+    }
     result = result.filter(
       creature => creature.challengeRating >= challengeRatingMin
     );
   }
   if (!isNullOrUndefined(challengeRatingMax)) {
+    if (challengeRatingMax === undefined) {
+      throw new Error(`challengeRatingMax is undefined`);
+    }
     result = result.filter(
       creature => creature.challengeRating <= challengeRatingMax
     );
@@ -95,6 +100,10 @@ function filterByTerrain(
     ];
   }
   return result;
+}
+
+function isNullOrUndefined(value: any): boolean {
+  return value === null || value === undefined;
 }
 
 interface randomCreaturesArgs {
