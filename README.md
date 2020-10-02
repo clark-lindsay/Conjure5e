@@ -1,28 +1,16 @@
 # Conjure5e
 
-A project to ease the use of conjuration spells in the 5th edition  
+A small library to ease the use of conjuration spells in the 5th edition
 of Dungeons and Dragons that summon random, parameterized creatures.
+
+I have used this library to build a web application, which can be found at https://conjure5e.herokuapp.com  
+If you are interested in the code for the web application, the repo is https://github.com/clark-lindsay/conjure-web
 
 ## Downloading and Installing
 
-To run the application you wil need to install node.js.  
-<br><br>
-The commands in the remainder of the readme are given assuming that you are using npm.  
-If you are not, then I expect you to be able to translate the commands to the packagemanager of your choosing.
-<br><br>
-One can either clone the repo using git, or download the zip archive and unzip.  
-In either case, after downloaded, you can run `npm instsall` at the root
-directory of the project (which is where you will see package.json, index.ts, and this README.md file) to install all of the dependencies for the project.
-
-## Configuration
-
-To enter the configuration menu you must execute `npm run configuration` at the command line, from the root of the project.
-
-## Running the application
-
-To start the application you must execute `npm run start`, `npm start`, or `npm run app` at the command line, from the root of the project.
-<br>
-To run the last spell that you cast, with all of the same parameters, execute: `npm run recast` at the command line, from the root of the project.
+`yarn add conjure5e`
+OR
+`npm install conjure5e`
 
 ## Reporting Errors and Possible Improvements
 
